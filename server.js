@@ -8,7 +8,7 @@ const path = require("path");
 // =============================================================
 var htmlRoutes = require("./app/routing/htmlRoutes.js");
 var apiRoutes = require("./app/routing/apiRoutes.js");
-var friends = require("./app/data/friends.js");
+var friendsData = require("./app/data/friends.js");
 
 // Sets up the Express App
 // =============================================================
@@ -23,4 +23,17 @@ app.use(bodyParser.json());
 // =============================================================
 
 
+
+
+
+
+
+
+
+  
+// Starts the server to begin listening
+// =============================================================
+app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
   
