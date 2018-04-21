@@ -6,8 +6,8 @@ const path = require("path");
 
 //external file routes 
 // =============================================================
-var htmlRoutes = require("./app/routing/html-routes.js");
-var apiRoutes = require("./app/routing/api-routes.js");
+var htmlRoutes = require("./app/routing/htmlRoutes.js");
+var apiRoutes = require("./app/routing/apiRoutes.js");
 var friends = require("./app/data/friends.js");
 
 // Sets up the Express App
@@ -22,8 +22,5 @@ app.use(bodyParser.json());
 // Routes
 // =============================================================
 
-// Basic route that sends the user first to the AJAX Page
-app.get("/app/public/", function(req, res) {
-    res.sendFile(path.join(__dirname, "view.html"));
-  });
+
   
