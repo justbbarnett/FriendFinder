@@ -5,7 +5,7 @@ var html = function (app) {
   
     //setting the index/home page to go on the / 
     app.get("/", function (req, res) {
-        res.sendFile(path.join (__dirname, "../puclic/home.html"));
+        res.sendFile(path.join (__dirname, "../public/home.html"));
     })
    
     //setting the survey url
@@ -15,10 +15,10 @@ var html = function (app) {
 
     //setting the base destination to the home page
     app.get( function (req, res) {
-        res.sendFile(path.join (__dirname, "../puclic/home.html"));
+        res.sendFile(path.join (__dirname, "../public/home.html"));
     })
 
-    
+
 }
 
 module.exports = html;

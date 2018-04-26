@@ -3,6 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
+var friendsData = require("./app/data/friends.js");
 
 // Sets up the Express App
 // =============================================================
@@ -13,13 +14,13 @@ var PORT = process.env.PORT || 8080;//external file routes
 
 // =============================================================
 // var htmlRoutes = 
-require("./app/routing/htmlRoutes.js")(app);
-var apiRoutes = require("./app/routing/apiRoutes.js")(app);
-var friendsData = require("./app/data/friends.js");
+
+
 
 // // Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 // app.use(express.static(path.join(__dirname, "/app/public")));
 
 // // Routes

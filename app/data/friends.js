@@ -1,6 +1,15 @@
 var friends = [
+    {
+        "name" : 'B',
+        "photo" : 'https://vignette.wikia.nocookie.net/disney/images/d/df/Jessie_from_toy_story_2.png/revision/latest?cb=20130718165011',
+        "scores" : [5,5,5,5,5,5,5,5,5,5]
+    },
 
-
+    {
+        "name" : "Andrew",
+        "photo" : "http://google.com",
+        "scores" : [1,5,4,5,6,5,8,5,9,5]
+    }
 
 
 ]
