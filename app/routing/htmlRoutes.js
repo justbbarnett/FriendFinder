@@ -1,15 +1,24 @@
+  // Basic route that sends the user first to the AJAX Page
+const path = require ('path')
 
-var html = function () {// Basic route that sends the user first to the AJAX Page
-    this.home = function (req, res) {
-        app.get("/app/public/", function(req, res) {
+var html = function (app) {
+  
+    //setting the index/home page to go on the / 
+    app.get("/", function (req, res) {
+        res.sendFile(path.join (__dirname, "../puclic/home.html"));
+    })
+   
+    //setting the survey url
+    app.get("/survey", function (req, res) {
+        res.sendFile( path.join(__dirname, "../public/survey.html"))
+    })
 
-        res.sendFile(path.join(__dirname, "home.html"));
-    });
-    this.survey = function (req, res) {
-        app.get("/app/public/", function(req, res) {
+    //setting the base destination to the home page
+    app.get( function (req, res) {
+        res.sendFile(path.join (__dirname, "../puclic/home.html"));
+    })
 
-        res.sendFile(path.join(__dirname, "survey.html"));
-    });
+    
 }
 
 module.exports = html;
