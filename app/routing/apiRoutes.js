@@ -23,7 +23,8 @@ var api = function (app) {
 
             similaritiesArr.push({
                 name: friend.name,
-                score : similarityScore
+                score : similarityScore,
+                photo: friend.photo
             });
         })
 
@@ -33,15 +34,18 @@ var api = function (app) {
             else
                 return next;
         })
+
+        // matchedFriend = similaritiesArr.reduce( 
+        //     (carry, next) => carry.score < next.score ? carry : next
+        // );        
         
 
         console.log (matchedFriend)
+        console.log (newFriend)
 
+        friends.push(newFriend)
+        res.send(matchedFriend)
         
-
-
-
-
     })
 
 

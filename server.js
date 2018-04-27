@@ -3,7 +3,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-var friendsData = require("./app/data/friends.js");
 
 // Sets up the Express App
 // =============================================================
@@ -11,22 +10,19 @@ var app = express();
 var PORT = process.env.PORT || 8080;//external file routes 
 
 
-
+//
 // =============================================================
-// var htmlRoutes = 
-
-
+var friendsData = require("./app/data/friends.js");
 
 // // Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-// app.use(express.static(path.join(__dirname, "/app/public")));
+app.use(express.static(path.join(__dirname, "/app/public")));
 
 // // Routes
 // // =============================================================
-// app.use("/", htmlRoutes);
-// app.use('/survey', htmlRoutes);
+require("./app/routing/apiRoutes.js")(app);
+require("./app/routing/htmlRoutes.js")(app);
 
   
 // // Starts the server to begin listening

@@ -8,7 +8,7 @@ var friends = [
     {
         "name" : "Andrew",
         "photo" : "http://google.com",
-        "scores" : [1,5,4,5,6,5,8,5,9,5]
+        "scores" : [1,5,1,5,1,5,1,5,1,5]
     }
 
 
