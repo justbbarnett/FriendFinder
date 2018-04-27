@@ -5,10 +5,12 @@ const friends = require ('../data/friends');
 //the function to export
 var api = function (app) {
 
+    //establishing the route of information
     app.get('/api/friends', function (req, res) {
         res.json(friends);
     })
 
+    //POsting through express to the Friends.js only avail on server, not persitant 
     app.post('/api/friends', function (req, res){
         var newFriend = req.body;
         var similarities;
@@ -28,6 +30,7 @@ var api = function (app) {
             });
         })
 
+        //Searching for the best match by the lowest differances
         let matchedFriend = similaritiesArr.reduce( (carry, next) => {
             if( carry.score < next.score )
                 return carry;
@@ -35,13 +38,10 @@ var api = function (app) {
                 return next;
         })
 
+        //Andrew showed me how to write it this was as well. Saving for reference.
         // matchedFriend = similaritiesArr.reduce( 
         //     (carry, next) => carry.score < next.score ? carry : next
         // );        
-        
-
-        console.log (matchedFriend)
-        console.log (newFriend)
 
         friends.push(newFriend)
         res.send(matchedFriend)
